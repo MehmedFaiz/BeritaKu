@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News UI</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f3f4f6;
+    }
+
+    .news-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+    }
+
+    .news-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .gradient-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        rgba(0,0,0,0.1) 40%,
+        rgba(0,0,0,0.9) 100%
+      );
+    }
+
+    .topic-pill{
+      background:#ffdea4;
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:14px;
+      color:#3d2b00;
+      font-weight:600;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="relative min-h-screen w-full">
+
+  <!-- SEARCH BAR -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[80%] z-50">
+
+    <div class="bg-white rounded-2xl shadow-lg p-3 flex items-center gap-3">
+
+      <span class="text-xl">🔍</span>
+
+      <input
+        type="text"
+        placeholder="Cari berita terbaru..."
+        class="flex-1 outline-none text-lg"
+      >
+
+      <button
+        class="bg-[#904d00] text-white px-8 py-3 rounded-xl font-bold"
+      >
+        Cari
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- DROPDOWN -->
+  <div class="absolute top-[120px] left-1/2 -translate-x-1/2 w-[90%] z-40">
+
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+
+        <!-- LEFT -->
+        <div>
+
+          <!-- RECENT -->
+          <div class="mb-8">
+
+            <div class="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase mb-4">
+              <span>🕘</span>
+              <span>Pencarian Terakhir</span>
+            </div>
+
+            <div class="space-y-2">
+
+              <div class="p-3 rounded-xl hover:bg-gray-100 cursor-pointer flex justify-between">
+                <span>Kebijakan Ekonomi 2024</span>
+                <span>›</span>
+              </div>
+
+              <div class="p-3 rounded-xl hover:bg-gray-100 cursor-pointer flex justify-between">
+                <span>Update AI Indonesia</span>
+                <span>›</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SUGGESTION -->
+          <div>
+
+            <div class="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase mb-4">
+              <span>📌</span>
+              <span>Saran Pencarian</span>
+            </div>
+
+            <div class="space-y-2">
+
+              <div class="p-3 rounded-xl hover:bg-gray-100 cursor-pointer">
+                Isu Lingkungan Global
+              </div>
+
+              <div class="p-3 rounded-xl hover:bg-gray-100 cursor-pointer">
+                Piala Dunia U-20
+              </div>
+
+              <div class="p-3 rounded-xl hover:bg-gray-100 cursor-pointer">
+                Pasar Modal Hari Ini
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <div>
+
+          <div class="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase mb-4">
+            <span>🔥</span>
+            <span>Topik Populer</span>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+
+            <div class="topic-pill">
+              #EkonomiDigital
+            </div>
+
+            <div class="topic-pill">
+              #KecerdasanBuatan
+            </div>
+
+            <div class="topic-pill">
+              #KesehatanMental
+            </div>
+
+            <div class="topic-pill">
+              #StartupIndo
+            </div>
+
+            <div class="topic-pill">
+              #MobilListrik
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="border-t bg-white h-14 flex items-center justify-center">
+
+        <button class="text-[#904d00] font-bold">
+          Lihat Semua Topik Terhangat
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- NEWS SECTION -->
+  <div class="pt-[430px] px-10 pb-20">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+      <!-- LEFT NEWS -->
+      <div>
+
+        <div class="news-card h-[500px]">
+
+          <!-- GANTI NAMA FILE -->
+          <img src="news1.jpeg" alt="">
+
+          <div class="gradient-overlay"></div>
+
+          <div class="absolute bottom-0 p-8 text-white">
+
+            <h1 class="text-5xl font-bold leading-tight mb-6">
+              Partai Demokrat Merombak Kalender Pemilihan Pendahuluan Partai
+            </h1>
+
+            <div class="flex gap-6 text-sm mb-6">
+              <span>Oleh Ginny Dennis</span>
+              <span>Baru Saja</span>
+            </div>
+
+            <p class="text-gray-300 leading-8 text-lg">
+              Menteri Luar Negeri Antony J. Blinken pada hari Jumat membatalkan perjalanan akhir pekan ke Beijing setelah sebuah balon mata-mata Tiongkok terlihat di atas negara bagian Montana.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- RIGHT NEWS -->
+      <div class="space-y-6">
+
+
+        <!-- CARD 1 -->
+        <div class="news-card h-[230px]">
+
+          <img src="news2.jpeg" alt="">
+
+          <div class="gradient-overlay"></div>
+
+          <div class="absolute bottom-0 p-6 text-white">
+
+            <h2 class="text-3xl font-bold mb-3">
+              Justice Department asks FEC to stand down
+            </h2>
+
+            <div class="flex gap-4 text-sm">
+              <span>By Ginny Dennis</span>
+              <span>Feb. 4, 2023</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="news-card h-[230px]">
+
+          <img src="news3.jpeg" alt="">
+
+          <div class="gradient-overlay"></div>
+
+          <div class="absolute bottom-0 p-6 text-white">
+
+            <h2 class="text-3xl font-bold mb-3">
+              Toxic chemicals burn over Ohio derailment site
+            </h2>
+
+            <div class="flex gap-4 text-sm">
+              <span>By Ginny Dennis</span>
+              <span>Feb. 4, 2023</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="news-card h-[230px]">
+
+          <img src="news4.jpeg" alt="">
+
+          <div class="gradient-overlay"></div>
+
+          <div class="absolute bottom-0 p-6 text-white">
+
+            <h2 class="text-3xl font-bold mb-3">
+              FBI Takes Down Hive Criminal Ransomware Group
+            </h2>
+
+            <div class="flex gap-4 text-sm">
+              <span>By Ginny Dennis</span>
+              <span>Feb. 4, 2023</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+        <div class="news-card h-[230px]">
+
+          <img src="news5.jpeg" alt="">
+
+          <div class="gradient-overlay"></div>
+
+          <div class="absolute bottom-0 p-6 text-white">
+
+            <h2 class="text-3xl font-bold mb-3">
+              Brazil sinks aircraft carrier carrying asbestos
+            </h2>
+
+            <div class="flex gap-4 text-sm">
+              <span>By Ginny Dennis</span>
+              <span>Feb. 4, 2023</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  const searchButton = document.querySelector('button');
+  const searchInput = document.querySelector('input');
+
+  searchButton.addEventListener('click', () => {
+
+    const value = searchInput.value;
+
+    if(value.trim() === ''){
+      alert('Masukkan kata pencarian');
+    }
+    else{
+      alert('Mencari: ' + value);
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
